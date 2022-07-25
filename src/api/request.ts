@@ -14,6 +14,7 @@ const service = axios.create({
 service.interceptors.request.use(
   (config: any) => {
     // Todo 可在此处配置为每个请求配置token
+    config.headers['token'] =  store.state.token;
     //这个config一定要return出去
     return config;
   },
